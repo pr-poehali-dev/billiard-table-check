@@ -4,8 +4,13 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 40 30% 97%;
+    --foreground: 30 12% 14%;
+
+    --gold: 38 55% 48%;
+    --gold-light: 42 70% 68%;
+    --gold-dark: 34 50% 36%;
+    --ink: 30 14% 12%;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -96,6 +101,58 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+.text-gold-gradient {
+  background: linear-gradient(
+    110deg,
+    hsl(var(--gold-dark)),
+    hsl(var(--gold-light)),
+    hsl(var(--gold-dark))
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-line {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    hsl(var(--gold)),
+    transparent
+  );
+}
+
+.paper-texture {
+  background-image:
+    radial-gradient(
+      circle at 20% 30%,
+      hsla(38, 55%, 48%, 0.04) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      hsla(38, 55%, 48%, 0.04) 0%,
+      transparent 40%
+    );
+}
+
+@media print {
+  body {
+    background: white !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-break {
+    page-break-inside: avoid;
+  }
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 }
