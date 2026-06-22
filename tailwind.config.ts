@@ -20,14 +20,14 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				display: ['"Cormorant Garamond"', 'serif'],
-				sans: ['Montserrat', 'sans-serif']
+				display: ['Oswald', 'sans-serif'],
+				sans: ['"IBM Plex Sans"', 'sans-serif'],
+				mono: ['"IBM Plex Mono"', 'monospace']
 			},
 			colors: {
-				gold: {
-					DEFAULT: 'hsl(var(--gold))',
-					light: 'hsl(var(--gold-light))',
-					dark: 'hsl(var(--gold-dark))'
+				neon: {
+					DEFAULT: 'hsl(var(--neon))',
+					soft: 'hsl(var(--neon-soft))'
 				},
 				ink: 'hsl(var(--ink))',
 				border: 'hsl(var(--border))',

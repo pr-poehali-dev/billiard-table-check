@@ -1,6 +1,6 @@
 import Icon from '@/components/ui/icon';
 
-const TABLE_IMG = 'https://cdn.poehali.dev/projects/c3c3aa88-ed22-4382-b6fd-25d6ff0fb5fd/files/bb5f4e0f-e30a-4bd1-89a0-d88087d7a183.jpg';
+const TABLE_IMG = 'https://cdn.poehali.dev/projects/c3c3aa88-ed22-4382-b6fd-25d6ff0fb5fd/files/f147f75d-cee7-4fab-8125-0c348d2da2e5.jpg';
 
 const SALE_DATE = new Date('2025-03-14');
 const WARRANTY_MONTHS = 60;
@@ -52,16 +52,18 @@ const products = [
 
 function Spec({ title, icon, rows }: { title: string; icon: string; rows: { label: string; value: string }[] }) {
   return (
-    <div className="border border-gold/30 bg-white/60 p-8 print-break">
+    <div className="relative border border-border bg-card/70 backdrop-blur p-8 print-break group transition-all hover:border-neon/50">
+      <span className="absolute top-0 left-0 h-px w-12 bg-neon" />
+      <span className="absolute top-0 left-0 w-px h-12 bg-neon" />
       <div className="flex items-center gap-3 mb-6">
-        <Icon name={icon} size={22} className="text-gold-dark" />
-        <h3 className="font-display text-2xl font-semibold text-ink">{title}</h3>
+        <Icon name={icon} size={22} className="text-neon" />
+        <h3 className="font-display text-2xl font-semibold uppercase tracking-wide text-foreground">{title}</h3>
       </div>
       <dl className="space-y-3">
         {rows.map((r) => (
-          <div key={r.label} className="flex justify-between items-baseline border-b border-gold/15 pb-2">
-            <dt className="text-sm text-foreground/55 tracking-wide">{r.label}</dt>
-            <dd className="text-sm font-medium text-ink text-right">{r.value}</dd>
+          <div key={r.label} className="flex justify-between items-baseline border-b border-border pb-2">
+            <dt className="text-sm text-muted-foreground tracking-wide font-mono">{r.label}</dt>
+            <dd className="text-sm font-medium text-foreground text-right">{r.value}</dd>
           </div>
         ))}
       </dl>
@@ -75,72 +77,72 @@ const Index = () => {
       <div className="max-w-5xl mx-auto px-6 py-14">
 
         <header className="text-center animate-fade-up" style={{ animationDelay: '0ms' }}>
-          <p className="text-xs tracking-[0.4em] uppercase text-gold-dark mb-4">Бильярдная мануфактура</p>
-          <h1 className="font-display text-5xl md:text-6xl font-bold text-gold-gradient animate-shimmer leading-tight">
+          <p className="text-xs tracking-[0.4em] uppercase text-neon font-mono mb-4">// Бильярдные системы нового поколения</p>
+          <h1 className="font-display text-5xl md:text-7xl font-bold uppercase text-gold-gradient animate-shimmer neon-text leading-none">
             Фабрика Старт
           </h1>
           <div className="flex items-center justify-center gap-4 mt-6">
             <span className="h-px w-16 gold-line" />
-            <span className="font-display italic text-xl text-ink">Сертификат качества</span>
+            <span className="font-mono text-sm uppercase tracking-[0.3em] text-muted-foreground">Сертификат качества</span>
             <span className="h-px w-16 gold-line" />
           </div>
         </header>
 
         <section className="mt-14 grid md:grid-cols-2 gap-10 items-center animate-fade-up" style={{ animationDelay: '120ms' }}>
           <div className="relative">
-            <div className="absolute -inset-3 border border-gold/40" />
-            <img src={TABLE_IMG} alt="Бильярдный стол" className="relative w-full object-cover aspect-[4/3] shadow-2xl" />
-            <div className="absolute -bottom-4 -right-4 bg-ink text-background px-5 py-3 shadow-xl no-print">
-              <p className="text-[10px] tracking-widest uppercase text-gold-light">Проверка пройдена</p>
+            <div className="absolute -inset-3 border border-neon/30" />
+            <img src={TABLE_IMG} alt="Бильярдный стол" className="relative w-full object-cover aspect-[4/3] neon-glow" />
+            <div className="absolute -bottom-4 -right-4 bg-neon text-primary-foreground px-5 py-3 no-print">
+              <p className="text-[10px] tracking-widest uppercase font-mono font-semibold">✓ Проверка пройдена</p>
             </div>
           </div>
 
           <div>
-            <h2 className="font-display text-4xl font-semibold text-ink">Магнат Люкс 12ft</h2>
-            <p className="text-foreground/60 mt-2 mb-8 font-display italic text-lg">Профессиональная серия · Русская пирамида</p>
+            <h2 className="font-display text-4xl font-semibold uppercase text-foreground">Магнат Люкс 12ft</h2>
+            <p className="text-muted-foreground mt-2 mb-8 font-mono text-sm">Профессиональная серия · Русская пирамида</p>
 
             <div className="space-y-5">
               <div className="flex items-start gap-4">
-                <Icon name="Hash" size={20} className="text-gold-dark mt-1" />
+                <Icon name="Hash" size={20} className="text-neon mt-1" />
                 <div>
-                  <p className="text-xs uppercase tracking-widest text-foreground/45">Серийный номер</p>
-                  <p className="text-lg font-medium text-ink">ST-2025-008417</p>
+                  <p className="text-xs uppercase tracking-widest text-muted-foreground font-mono">Серийный номер</p>
+                  <p className="text-lg font-medium text-foreground font-mono">ST-2025-008417</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <Icon name="Calendar" size={20} className="text-gold-dark mt-1" />
+                <Icon name="Calendar" size={20} className="text-neon mt-1" />
                 <div>
-                  <p className="text-xs uppercase tracking-widest text-foreground/45">Дата продажи</p>
-                  <p className="text-lg font-medium text-ink">{fmt(SALE_DATE)}</p>
+                  <p className="text-xs uppercase tracking-widest text-muted-foreground font-mono">Дата продажи</p>
+                  <p className="text-lg font-medium text-foreground">{fmt(SALE_DATE)}</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <Icon name="ShieldCheck" size={20} className="text-gold-dark mt-1" />
+                <Icon name="ShieldCheck" size={20} className="text-neon mt-1" />
                 <div>
-                  <p className="text-xs uppercase tracking-widest text-foreground/45">Гарантийный срок</p>
-                  <p className="text-lg font-medium text-ink">5 лет · до {fmt(warrantyEnd)}</p>
+                  <p className="text-xs uppercase tracking-widest text-muted-foreground font-mono">Гарантийный срок</p>
+                  <p className="text-lg font-medium text-foreground">5 лет · до {fmt(warrantyEnd)}</p>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="mt-12 bg-ink text-background p-10 print-break animate-fade-up" style={{ animationDelay: '240ms' }}>
+        <section className="mt-12 relative border border-neon/40 bg-card/70 backdrop-blur p-10 print-break neon-glow animate-fade-up" style={{ animationDelay: '240ms' }}>
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
             <div>
-              <p className="text-xs uppercase tracking-[0.3em] text-gold-light mb-2">Гарантия активна</p>
-              <p className="font-display text-6xl font-bold text-gold-gradient animate-shimmer">{daysLeft.toLocaleString('ru-RU')}</p>
-              <p className="text-background/60 mt-1">дней до окончания гарантии</p>
+              <p className="text-xs uppercase tracking-[0.3em] text-neon font-mono mb-2">● Гарантия активна</p>
+              <p className="font-display text-6xl font-bold text-gold-gradient animate-shimmer neon-text">{daysLeft.toLocaleString('ru-RU')}</p>
+              <p className="text-muted-foreground mt-1 font-mono text-sm">дней до окончания гарантии</p>
             </div>
             <div className="flex-1 max-w-md w-full">
-              <div className="flex justify-between text-xs text-background/50 mb-2">
+              <div className="flex justify-between text-xs text-muted-foreground mb-2 font-mono">
                 <span>{fmt(SALE_DATE)}</span>
                 <span>{fmt(warrantyEnd)}</span>
               </div>
-              <div className="h-2 bg-background/15 rounded-full overflow-hidden">
-                <div className="h-full bg-gradient-to-r from-gold-dark via-gold to-gold-light" style={{ width: `${progress}%` }} />
+              <div className="h-2 bg-secondary rounded-full overflow-hidden">
+                <div className="h-full bg-gradient-to-r from-neon-soft to-neon" style={{ width: `${progress}%`, boxShadow: '0 0 14px hsl(var(--neon))' }} />
               </div>
-              <p className="text-right text-xs text-gold-light mt-2">{progress}% срока осталось</p>
+              <p className="text-right text-xs text-neon mt-2 font-mono">{progress}% срока осталось</p>
             </div>
           </div>
         </section>
@@ -150,16 +152,16 @@ const Index = () => {
           <Spec title="Параметры плит" icon="Box" rows={slate} />
         </section>
 
-        <section className="mt-12 border border-gold/30 bg-white/60 p-8 print-break animate-fade-up" style={{ animationDelay: '420ms' }}>
+        <section className="mt-12 relative border border-border bg-card/70 backdrop-blur p-8 print-break animate-fade-up" style={{ animationDelay: '420ms' }}>
           <div className="flex items-center gap-3 mb-6">
-            <Icon name="Palette" size={22} className="text-gold-dark" />
-            <h3 className="font-display text-2xl font-semibold text-ink">Варианты выкраски и отделки</h3>
+            <Icon name="Palette" size={22} className="text-neon" />
+            <h3 className="font-display text-2xl font-semibold uppercase tracking-wide text-foreground">Варианты выкраски и отделки</h3>
           </div>
           <div className="grid grid-cols-3 md:grid-cols-6 gap-5">
             {finishes.map((f) => (
-              <div key={f.name} className="text-center">
-                <div className="aspect-square w-full mx-auto border border-gold/30 shadow-inner" style={{ backgroundColor: f.hex }} />
-                <p className="text-xs mt-2 text-foreground/70">{f.name}</p>
+              <div key={f.name} className="text-center group">
+                <div className="aspect-square w-full mx-auto border border-border transition-all group-hover:border-neon group-hover:shadow-[0_0_18px_-2px_hsl(var(--neon))]" style={{ backgroundColor: f.hex }} />
+                <p className="text-xs mt-2 text-muted-foreground font-mono">{f.name}</p>
               </div>
             ))}
           </div>
@@ -167,36 +169,36 @@ const Index = () => {
 
         <section className="mt-12 print-break animate-fade-up" style={{ animationDelay: '480ms' }}>
           <div className="text-center mb-8">
-            <p className="text-xs uppercase tracking-[0.3em] text-gold-dark mb-2">Рекомендуем</p>
-            <h3 className="font-display text-3xl font-semibold text-ink">Дополнительные товары</h3>
+            <p className="text-xs uppercase tracking-[0.3em] text-neon font-mono mb-2">// Рекомендуем</p>
+            <h3 className="font-display text-3xl font-semibold uppercase text-foreground">Дополнительные товары</h3>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {products.map((p) => (
-              <div key={p.name} className="group border border-gold/30 bg-white/60 p-6 flex items-center gap-4 transition-all hover:border-gold hover:shadow-lg hover:-translate-y-1">
-                <div className="w-12 h-12 flex items-center justify-center bg-ink/5 border border-gold/20 shrink-0">
-                  <Icon name={p.icon} size={22} className="text-gold-dark" />
+              <div key={p.name} className="group border border-border bg-card/70 backdrop-blur p-6 flex items-center gap-4 transition-all hover:border-neon hover:shadow-[0_0_24px_-6px_hsl(var(--neon))] hover:-translate-y-1">
+                <div className="w-12 h-12 flex items-center justify-center bg-secondary border border-border shrink-0 group-hover:border-neon/50">
+                  <Icon name={p.icon} size={22} className="text-neon" />
                 </div>
                 <div>
-                  <p className="font-medium text-ink leading-tight">{p.name}</p>
-                  <p className="text-gold-dark font-semibold mt-1">{p.price}</p>
+                  <p className="font-medium text-foreground leading-tight">{p.name}</p>
+                  <p className="text-neon font-semibold mt-1 font-mono">{p.price}</p>
                 </div>
               </div>
             ))}
           </div>
         </section>
 
-        <footer className="mt-16 pt-10 border-t border-gold/30 text-center animate-fade-up" style={{ animationDelay: '540ms' }}>
-          <h4 className="font-display text-2xl font-semibold text-gold-gradient">Фабрика Старт</h4>
-          <p className="text-foreground/60 mt-3 text-sm">Производство бильярдных столов премиум-класса с 1998 года</p>
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 mt-5 text-sm text-foreground/70">
-            <span className="flex items-center gap-2"><Icon name="Phone" size={16} className="text-gold-dark" /> 8 800 555-35-35</span>
-            <span className="flex items-center gap-2"><Icon name="Mail" size={16} className="text-gold-dark" /> info@fabrika-start.ru</span>
-            <span className="flex items-center gap-2"><Icon name="MapPin" size={16} className="text-gold-dark" /> Москва, ул. Бильярдная, 1</span>
+        <footer className="mt-16 pt-10 border-t border-border text-center animate-fade-up" style={{ animationDelay: '540ms' }}>
+          <h4 className="font-display text-2xl font-semibold uppercase text-gold-gradient">Фабрика Старт</h4>
+          <p className="text-muted-foreground mt-3 text-sm font-mono">Производство бильярдных столов премиум-класса с 1998 года</p>
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 mt-5 text-sm text-muted-foreground">
+            <span className="flex items-center gap-2"><Icon name="Phone" size={16} className="text-neon" /> 8 800 555-35-35</span>
+            <span className="flex items-center gap-2"><Icon name="Mail" size={16} className="text-neon" /> info@fabrika-start.ru</span>
+            <span className="flex items-center gap-2"><Icon name="MapPin" size={16} className="text-neon" /> Москва, ул. Бильярдная, 1</span>
           </div>
         </footer>
 
         <div className="mt-12 text-center no-print">
-          <button onClick={() => window.print()} className="inline-flex items-center gap-2 bg-ink text-background px-8 py-4 hover:bg-gold-dark transition-colors tracking-widest uppercase text-sm">
+          <button onClick={() => window.print()} className="inline-flex items-center gap-2 bg-neon text-primary-foreground px-8 py-4 hover:shadow-[0_0_30px_-4px_hsl(var(--neon))] transition-all tracking-widest uppercase text-sm font-semibold font-mono">
             <Icon name="Printer" size={18} /> Распечатать сертификат
           </button>
         </div>
